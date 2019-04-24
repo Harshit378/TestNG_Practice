@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Suite" parallel="methods">
+    <parameter name="number1" value="-5"></parameter>
+    <parameter name="number2" value="-10"></parameter>
+    <parameter name="number3" value="6.4"></parameter>
+    <parameter name="number4" value="3.8"></parameter>
+    <test name="Test I" preserve-order="true" enabled="true">
+        <classes>
+            <class name="Test_ParallelOne"></class>
+        </classes>
+    </test>
+    <test name="Test II" preserve-order="true" enabled="true">
+        <classes>
+            <class name="Test_ParallelTwo"></class>
+        </classes>
+    </test>
+</suite>

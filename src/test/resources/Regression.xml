@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite">
+    <test name="Calculator">
+        <groups>
+            <define name="printlines">
+                <include name="print"></include>
+            </define>
+            <define name="add">
+                <include name="sum"></include>
+            </define>
+            <run>
+                <include name="printlines"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Test_Annotations"></class>
+        </classes>
+    </test>
+    <test name="Dashboard">
+    <groups>
+        <run>
+            <include name="sum"></include>
+        </run>
+    </groups>
+    <classes>
+        <class name="Test_Dashboard"></class>
+    </classes>
+</test>
+    <test name="Timeout" preserve-order="true" enabled="false">
+    <classes>
+        <class name="Test_Timeout"></class>
+    </classes>
+</test>
+</suite>

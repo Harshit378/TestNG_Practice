@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression Suite]">
+  <test thread-count="5" verbose="0" name="Dashboard(failed)">
+    <groups>
+      <run>
+        <include name="sum"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Test_Dashboard">
+        <methods>
+          <include name="verifySumOfTwoNumber"/>
+        </methods>
+      </class> <!-- Test_Dashboard -->
+    </classes>
+  </test> <!-- Dashboard(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->
