@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression">
+	<listeners>
+		<listener class-name="listeners.AllListerners"></listener>
+	</listeners>
+	<test name="IInvokedMethodListener" preserve-order="true"
+		enabled="true">
+		<classes>
+			<class name="Test_IInvokedMethodListenerDemo"></class>
+		</classes>
+	</test>
+	<test name="ITestResult" preserve-order="true" enabled="true">
+		<classes>
+			<class name="Test_ITestResultDemo"></class>
+		</classes>
+	</test>
+	<test name="ITestListener" preserve-order="true" enabled="true">
+		<classes>
+			<class name="Test_ITestListenerDemo"></class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Lets Kode It Parallel" parallel="tests"
+	thread-count="2">
+	<parameter name="browser" value="chrome"></parameter>
+	<test name="Lets Kode It - Chrome" preserve-order="true"
+		enabled="true">
+		<classes>
+			<class name="automation.Test_LetsCodeIt"></class>
+		</classes>
+	</test>
+</suite>

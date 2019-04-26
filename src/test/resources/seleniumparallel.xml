@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Lets Kode It Parallel" parallel="tests" thread-count = "2">
+	<test name="Lets Kode It - Firefox" preserve-order="true" enabled="true">
+		<parameter name="browser" value="iexplorer"></parameter>
+		<classes>
+			<class name="automation.Test_LetsCodeIt"></class>
+		</classes>
+	</test>
+	<test name="Lets Kode It - Chrome" preserve-order="true" enabled="true">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="automation.Test_LetsCodeIt"></class>
+		</classes>
+	</test>
+</suite>
