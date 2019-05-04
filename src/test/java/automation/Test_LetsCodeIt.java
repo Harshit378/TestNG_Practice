@@ -1,51 +1,33 @@
 package automation;
 
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.springframework.stereotype.Component;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import listeners.AutomationDriver;
 import listeners.ScreenshotListener;
 
+@Component
 @Listeners(ScreenshotListener.class)
 public class Test_LetsCodeIt {
 
 	WebDriver driver;
-	String baseURL;
+	String baseURL = "https://www.google.com/intl/en-GB/gmail/about/#";
 
 	@BeforeClass
-	@Parameters({ "browser" })
-	public void setUp(String browserType) {
-		this.baseURL = "https://www.google.com/intl/en-GB/gmail/about/#";
-		if ("IExplorer".equalsIgnoreCase(browserType)) {
-			System.setProperty("webdriver.ie.driver",
-					"C:\\Users\\E076585\\Learning\\testng\\src\\main\\resources\\drivers\\IEDriverServer.exe");
-			driver = new InternetExplorerDriver();
-		} else if ("Chrome".equalsIgnoreCase(browserType)) {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\E076585\\Learning\\testng\\src\\main\\resources\\drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}
-		AutomationDriver.setDriver(driver);
-		driver.get("chrome://version/");
-		driver.manage().window().maximize();
-		driver.navigate().to(baseURL);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	public void launchAUT() {
+		AutomationDriver.getDriver().get(baseURL);
 	}
-
+	
 	@Test(priority = 1)
-	@Parameters({ "browser" })
 	public void login(String browser) {
 		Reporter.log("Locating the element with locator [" + "(//a[contains(text(),'Sign in')])[2]" + "]", true);
 		WebElement singInLink = driver.findElement(By.xpath("(//a[contains(text(),'Sign in')])[2]"));
@@ -75,16 +57,11 @@ public class Test_LetsCodeIt {
 	}
 
 	@Test(priority = 4)
-	public void loginToApplication() {
+	public void loginToApplication() throws InterruptedException{
 		Reporter.log("Locating the element with locator [" + "//*[@id=\"passwordNext\"]/div[2]" + "]", true);
-		WebElement loginButton = driver.findElement(By.xpath("//*[@id='passwordNext']/div[2]"));
-		loginButton.click();
-	}
-
-	@AfterClass
-	public void cleanUp() {
-		driver.close();
-		driver.quit();
+		WebElement loginButton = driver.findElement(By.xpath("//span[text()='Next']"));
+		Thread.sleep(5000);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginButton);
 	}
 
 }

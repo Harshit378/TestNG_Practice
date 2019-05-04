@@ -12,7 +12,7 @@ import org.testng.ITestResult;
 
 public class ScreenshotListener implements ITestListener {
 
-	String filePath = "C:\\Users\\E076585\\Learning\\testng\\src\\main\\resources\\images\\";
+	String filePath = "F:\\Projects\\TestNG_Practice\\src\\main\\resources\\images\\";
 	String currentTestMethodName;
 
 	public void getScreenshot() {
@@ -27,8 +27,6 @@ public class ScreenshotListener implements ITestListener {
 	}
 
 	public void onFinish(ITestContext arg0) {
-		this.currentTestMethodName = System.currentTimeMillis() + arg0.getName() + "_end";
-		getScreenshot();
 	}
 
 	public void onStart(ITestContext arg0) {

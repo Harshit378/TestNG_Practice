@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.896 s <<< FAILURE! - in TestSuite
-verifySumOfTwoNumber(Test_Dashboard)  Time elapsed: 0.008 s  <<< FAILURE!
-java.lang.AssertionError: expected [9] but found [10]
-	at Test_Dashboard.verifySumOfTwoNumber(Test_Dashboard.java:21)
-
