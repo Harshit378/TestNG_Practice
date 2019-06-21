@@ -42,21 +42,25 @@ public class ScreenshotListener implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult arg0) {
+		System.out.println(arg0.getTestName());
 		this.currentTestMethodName = System.currentTimeMillis() + arg0.getName() + "_end";
 		getScreenshot();
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
+		System.out.println(arg0.getTestName());
 		this.currentTestMethodName = System.currentTimeMillis() + arg0.getName() + "_end";
 		getScreenshot();
 	}
 
 	public void onTestStart(ITestResult arg0) {
+		System.out.println(arg0.getTestName());
 		this.currentTestMethodName = System.currentTimeMillis() + arg0.getName() + "_start";
 		getScreenshot();
 	}
 
 	public void onTestSuccess(ITestResult arg0) {
+		System.out.println(arg0.getTestName());
 		this.currentTestMethodName = System.currentTimeMillis() + arg0.getName() + "_end";
 		getScreenshot();
 	}

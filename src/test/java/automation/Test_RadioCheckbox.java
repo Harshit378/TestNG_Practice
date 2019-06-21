@@ -3,6 +3,8 @@ package automation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -38,6 +40,10 @@ public class Test_RadioCheckbox {
 		boolean isCheckboxSelected = Checkbox2.isSelected();
 		Reporter.log("isCheckboxSelected : " + isCheckboxSelected, true);
 		as.assertEquals(isCheckboxSelected, true);
+		
+		Actions act = new Actions(driver);
+		Action a = act.build();
+		act.moveToElement(Checkbox2).perform();
 		
 		as.assertAll();
 	}
