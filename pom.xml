@@ -9,7 +9,7 @@
 	<properties>
 		<aspectj.version>1.8.10</aspectj.version>
 		<LAST_VERSION>2.10.0</LAST_VERSION>
-		<spring.version>5.1.5.RELEASE</spring.version>
+		<spring.version>5.2.22.RELEASE</spring.version>
 	</properties>
 
 	<build>
